@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator Home Work</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    :root {
+      --font-color: #fff;
+      --backgrond-ac: #d4d4d2;
+      --background-color: #1c1c1c;
+      --button-background: #505050;
+      --button-anther: #ff9500;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background-color: #f0f0f0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 310px;
+      height: 520px;
+      border-radius: 10px;
+      background-color: var(--background-color);
+    }
+
+    .user-input {
+      width: 100%;
+      height: 130px;
+      background: transparent;
+      color: var(--font-color);
+    }
+
+    .user-input .show {
+      width: 100%;
+      height: 40px;
+      font-size: 45px;
+      padding: 10px;
+
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    .user-input .type {
+      width: 100%;
+      height: 100%;
+      font-size: 60px;
+      padding: 10px;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .number {
+      width: 100%;
+      height: 350px;
+      background-color: transparent;
+
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px;
+    }
+
+    .number button {
+      display: block;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background-color: var(--button-background);
+      margin: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--font-color);
+      font-size: 35px;
+      border: none;
+      transition: all 0.15s;
+    }
+
+    .number button.ac {
+      width: 140px;
+      height: 65px;
+      border-radius: 100px;
+    }
+
+    .ac0 {
+      visibility: hidden;
+    }
+
+    button[value="/"],
+    button[value="*"],
+    button[value="-"],
+    button[value="+"],
+    button[value="="] {
+      background-color: var(--button-anther);
+    }
+
+    button[value="ac"],
+    button[value="%"],
+    button[value=""] {
+      background-color: var(--backgrond-ac);
+      color: var(--background-color);
+    }
+
+    i.fa-backspace {
+      background-color: transparent;
+      color: var(--background-color);
+    }
+
+    button:active {
+      background-color: aliceblue;
+      color: var(--background-color);
+    }
+
+    .number button[value="ac"]:active,
+    .number button[value="%"]:active,
+    .number button[value=""]:active {
+      background-color: var(--background-color);
+      color: var(--font-color);
+    }
+
+    button:active i.fa-backspace {
+      color: #fff;
+    }
+
+    .signhide {
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="user-input">
+        <div class="show"></div>
+        <div class="type">0</div>
+        <span class="signhide"></span>
+      </div>
+      <div class="number">
+        <button value="ac">AC</button>
+        <button value="" id="back"><i class="fas fa-backspace"></i></button>
+        <button value="%">%</button>
+        <button value="/">/</button>
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button value="*">X</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="-">-</button>
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button value="+">+</button>
+        <button value="0" class="ac">0</button>
+        <button value=".">.</button>
+        <button value="=">=</button>
+      </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+  </body>
+</html>
